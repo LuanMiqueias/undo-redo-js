@@ -4,7 +4,10 @@ export default class UndoRedo {
   constructor() {
     this.redoItems = new Deque();
     this.undoItems = new Deque();
-    this.maxLength = 10;
+    this.maxLength = 50;
+    this.initialValue = null;
+
+    this.addValueInList(this.initialValue); // List initial value
   }
 
   isMaxLength() {
@@ -27,6 +30,6 @@ export default class UndoRedo {
     const undoValue = !this.isMaxLength() && this.undoItems.removeFront();
     if (undoValue) this.redoItems.addFront(undoValue);
 
-    return this.redoItems.peekFront();
+    return this.redoItems.peekFront() || null;
   }
 }

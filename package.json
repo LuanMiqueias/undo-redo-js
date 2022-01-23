@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "babel src/js -d dist/",
-    "webpack": "webpack --env build",
+    "build": "webpack --env build",
+    "babel": "babel src/js -d dist/",
     "start": "http-server"
   },
   "devDependencies": {
